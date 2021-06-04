@@ -3,8 +3,9 @@ import javax.imageio.ImageIO
 import scala.collection.mutable.ArrayBuffer
 
 object LuminanceModule extends App {
+  val origin_directory = "your_path"
   def get_files_from_folder(): Unit = {
-    val folder = new File("your_path")
+    val folder = new File(origin_directory)
     val listOfFiles = folder.listFiles
     val array = ArrayBuffer[String]()
     var counter = 0
@@ -18,10 +19,24 @@ object LuminanceModule extends App {
   }
 
 
+  def prepare_file_name(filename: String, percentage: Long): String = {
+    var new_filename: String = ""
+    var iterator:Integer = 0
+    val extension = filename.split("\\.").last
+    do{
+      new_filename += filename(iterator)
+      iterator+=1
+    }while(filename(iterator) != '.')
+    if (percentage >= 55) new_filename+="_dark_"+percentage+'.'+extension
+    else new_filename+="_bright_"+percentage+'.'+extension
+    new_filename
+  }
+
   def calculate_luminance(array: ArrayBuffer[String]): Unit = {
+    var output_dir: String = ""
     val array_size: Int = array.length - 1
     for (img_file <- 0 to array_size) {
-      val img = ImageIO.read(new File("your_path" + array(img_file)))
+      val img = ImageIO.read(new File(origin_directory + "\\" + array(img_file)))
       var width: Int = 0
       var height: Int = 0
       var counter: Int = 0
@@ -43,8 +58,12 @@ object LuminanceModule extends App {
         }
       }
       average = average / counter
-      val percentage: Long = math.round((average * 100) / 255)
-      println("Luminance: " + percentage + "%")
+      val percentage: Long = 100 - math.round((average * 100) / 255)
+      val new_file_name: String = prepare_file_name(array(img_file), percentage)
+      println(new_file_name)
+      output_dir = origin_directory + "\\" + new_file_name
+      val file_to_save = new File(output_dir)
+      ImageIO.write(img, "bmp", file_to_save)
     }
   }
 
