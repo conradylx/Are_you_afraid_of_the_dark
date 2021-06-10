@@ -1,0 +1,19 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\frank\IdeaProjects\getting-started\src\test\scala\Luminance\LuminanceTest.scala:3:12: object scalatest is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.scalatest.flatspec.AnyFlatSpec[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\frank\IdeaProjects\getting-started\src\test\scala\Luminance\LuminanceTest.scala:4:12: object scalatest is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.scalatest.matchers.should[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\frank\IdeaProjects\getting-started\src\test\scala\Luminance\LuminanceTest.scala:6:29: not found: type AnyFlatSpec[0m
+[0m[[0m[31merror[0m] [0m[0mclass LuminanceTest extends AnyFlatSpec with should.Matchers{[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\frank\IdeaProjects\getting-started\src\test\scala\Luminance\LuminanceTest.scala:6:46: not found: value should[0m
+[0m[[0m[31merror[0m] [0m[0mclass LuminanceTest extends AnyFlatSpec with should.Matchers{[0m
+[0m[[0m[31merror[0m] [0m[0m                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\frank\IdeaProjects\getting-started\src\test\scala\Luminance\LuminanceTest.scala:7:15: value should is not a member of String[0m
+[0m[[0m[31merror[0m] [0m[0m  "Luminance" should "properly counter files in folder" in {[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\frank\IdeaProjects\getting-started\src\test\scala\Luminance\LuminanceTest.scala:9:19: not found: value LuminanceModule[0m
+[0m[[0m[31merror[0m] [0m[0m    val counter = LuminanceModule.get_files_from_folder(input_origin_directory)[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m6 errors found[0m
