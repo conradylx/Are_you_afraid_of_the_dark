@@ -4,7 +4,7 @@ A project that checks speed of
 learning new technology. The implementation time is 2 business  days to learn the basics of the Scala language 
 and implement a solution consisting in decomposing the image into 3 separate channels (red, green and blue) 
 in order to analyze the darkness of the input image, calculate the darkness percentage, set new name of the 
-file and place it in the correct folder depending of result. Additionally, in a separate file there is a treshold configuration file.
+file and place it in the correct folder depending of result. Additionally, there is a treshold configuration file.
 
 ## Prerequisites
 
